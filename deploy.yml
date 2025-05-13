@@ -1,0 +1,45 @@
+name: Deploy to Google Cloud Function
+
+on:
+  push:
+    branches:
+      - main  # Change to your desired branch in Github
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12' # Python version
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}' # Service account key for authentication in Github secrets
+
+      - name: Set up gcloud CLI
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: project_id_function # Project ID of the function in Google Cloud
+
+      - name: Deploy Cloud Function securely
+        run: |
+          gcloud functions deploy sftp-to-gcs \
+          --region europe-west2 \ 
+          --runtime python312 \ 
+          --entry-point sftp_to_gcs \ 
+          --trigger-http \ 
+          --memory 512MB \ 
+          --timeout 60s \ 
+          --env-vars-file env_vars.json \ 
+          --set-secrets SFTP_PASSWORD=SFTP_PASSWORD_NAME:latest \
+

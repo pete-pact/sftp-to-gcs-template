@@ -1,0 +1,8 @@
+{
+    "SFTP_HOST": "sftp.example.com",
+    "SFTP_PORT": "22",
+    "SFTP_USERNAME": "your-username",
+    "ROOT_FOLDER": "/path/on/sftp",
+    "GCP_PROJECT_NAME": "your-gcp-project",
+    "GCS_BUCKET_NAME": "your-gcs-bucket"
+}
