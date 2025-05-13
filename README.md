@@ -23,12 +23,13 @@ Once you've created your copy:
 
 ### Files to Review and Update
 
-| File Name                         | Purpose                                                               |
-|-----------------------------------|-----------------------------------------------------------------------|
-| `main.py`                         | Cloud Function logic (SFTP → GCS)                                     |
-| `env_vars.json`                   | Environment variables (e.g. SFTP host, bucket name)                   |
-| `requirements.txt`                | Python dependencies                                                   |
-| `.github/workflows/deploy.yml`    | GitHub Actions deployment script (must live in `.github/workflows`)   |
+| File Name                                     | Purpose                                                                   | 
+|-----------------------------------------------|---------------------------------------------------------------------------|
+| `main.py`                                     | Cloud Function logic (SFTP → GCS)                                         |
+| `env_vars.json`                               | Environment variables (e.g. SFTP host, bucket name)                       |
+| `requirements.txt`                            | Python dependencies                                                       |
+| `.github/workflows/deploy.yml`                | GitHub Actions deployment script (must live in `.github/workflows`)       |
+| `Technical_Guide_SFTP_to_GCS_Template.docx`   | Technical guide for the template                                          |
 
 ---
 
