@@ -38,8 +38,6 @@ jobs:
           --runtime python312 \ 
           --entry-point sftp_to_gcs \ 
           --trigger-http \ 
-          --memory 512MB \ 
-          --timeout 60s \ 
           --env-vars-file env_vars.json \ 
           --set-secrets SFTP_PASSWORD=SFTP_PASSWORD_NAME:latest \
 
