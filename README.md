@@ -1,6 +1,6 @@
 # SFTP to GCS Cloud Function Template
 
-This repository contains a reusable Google Cloud Function integration that transfers the **latest file from an SFTP server to a Google Cloud Storage (GCS) bucket**. It's designed to be quickly replicated across customer implementations or internal projects.
+This template enables the automated transfer of files from an SFTP server to a Google Cloud Storage (GCS) bucket using a Google Cloud Function triggered via HTTP. It's ready for fast replication across different integrations by updating minimal configuration.
 
 ---
 
